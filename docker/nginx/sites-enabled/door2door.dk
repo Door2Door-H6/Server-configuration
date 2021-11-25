@@ -1,0 +1,14 @@
+server {
+        listen 443 ssl;
+	server_name door2door.dk;
+        ssl_certificate /etc/ssl/certs/fullchain.pem;
+        ssl_certificate_key /etc/ssl/certs/privkey.pem;
+        
+	location / {
+                root /var/www/door2door.dk/html;
+		autoindex on;
+                index index.html;
+
+		try_files $uri $uri/ /index.html?$args; # Angular uri routing fix
+        }
+}
