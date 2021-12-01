@@ -14,4 +14,19 @@ services:
             - '80:80'
             - '443:443'
         image: nginx
+    ms-sql:
+        container_name: door2door-mssql
+        restart: always
+        hostname: door2door-mssql
+        container_name: door2door-mssql
+        environment:
+            - ACCEPT_EULA=Y
+            - SA_PASSWORD=F5%ajdoiwjdiwojdoiw
+        volumes:
+            - './mssql/data:/var/opt/mssql/data'
+            - './mssql/log:/var/opt/mssql/log'
+            - './mssql/secrets:/var/opt/mssql/secrets'
+        ports:
+            - '1433:1433'
+        image: mcr.microsoft.com/mssql/server:2019-CU14-ubuntu-20.04
 
