@@ -11,4 +11,5 @@ nft insert rule ip nat prerouting iifname "enp9s0f0" tcp dport 22222 counter dna
 nft insert rule ip nat prerouting iifname "enp9s0f0" tcp dport 80 counter dnat to 192.168.122.10:80
 nft insert rule ip nat prerouting iifname "enp9s0f0" tcp dport 443 counter dnat to 192.168.122.10:443
 nft insert rule ip nat prerouting iifname "enp9s0f0" tcp dport 5000 counter dnat to 192.168.122.10:5000
+nft insert rule ip nat prerouting iifname "enp9s0f0" tcp dport 5001 counter dnat to 192.168.122.10:5001
 
